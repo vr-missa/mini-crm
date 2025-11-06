@@ -11,7 +11,7 @@ export default function ViewCustomer({ id }) {
     (async () => {
       setLoading(true);
       try {
-        const res = await api.get(`GetCustomerDetailsById/${id}`);
+        const res = await api.get(`/${id}`);
         if (mounted) setCustomer(res.data);
       } catch (err) {
         console.error('Failed to load customer', err);

@@ -14,7 +14,7 @@ export default function CustomersPage() {
   async function load() {
     setLoading(true);
     try {
-      const res = await api.get('/GetAllCustomers');
+      const res = await api.get('/');
       setCustomers(res.data);
     } catch (err) {
       console.error('Error loading customers', err);
@@ -31,7 +31,7 @@ export default function CustomersPage() {
   async function handleDelete(id) {
     if (!confirm('Delete this customer?')) return;
     try {
-      await api.delete(`DeleteCustomer/${id}`);
+      await api.delete(`/${id}`);
       await load();
     } catch (err) {
       console.error('Delete failed', err);

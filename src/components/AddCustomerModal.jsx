@@ -12,7 +12,7 @@ export default function AddCustomerModal({ onClose, onSaved }) {
     }
     setSaving(true);
     try {
-      await api.post('/AddNewCustomer', { name });
+      await api.post('/', { name });
       setName('');
       if (onSaved) onSaved();
       if (onClose) onClose();
